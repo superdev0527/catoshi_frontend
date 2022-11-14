@@ -1,0 +1,11 @@
+@import "./assets/cus-var";
+@import "./assets/reset";
+@import "./assets/common";
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+// ... or 
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
+// .full-screen{
+//     z-index: 9999;
+// }

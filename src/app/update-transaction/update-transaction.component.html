@@ -1,0 +1,36 @@
+<app-header></app-header>
+<section class="kishu-section ptPad mt-5">
+    <form action="" [formGroup]="userform">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-1">   </div>
+            <div class="col-lg-2 font-weight-bold f-20">Select Network : </div>
+            <div class="col-lg-2 p-0">
+                <select class="form-control p-0 f-20"  formControlName="networkType">
+                    <option value="">Select Network</option>
+                    <option value="FTM">FTM</option>
+                    <option value="BSC">BSC</option>
+                </select>
+                <span class="text-danger" *ngIf="(userFormControl.networkType.touched) && userFormControl.networkType.errors?.required">
+                    Network is required
+                </span>
+            </div>
+            <div class="col-lg-2 font-weight-bold f-20 text-center">Block :</div>
+            <div class="col-lg-2 p-0 f-20">
+                <input type="text" formControlName="block" placeholder="Enter Block " class="form-control" style="border-bottom: 1px solid black; border-radius: 0; text-align: center;" appOnlynumber>
+                <span class="text-danger" *ngIf="(userFormControl.block.touched) && userFormControl.block.errors?.required">
+                    Block is required
+                </span>
+            </div>
+            <div class="col-lg-2">
+                <span>
+                    <button class="btn btn-outline btn mr-2 w-100" (click)="submit()" [disabled]="userform.invalid">Submit</button>
+                </span>
+            </div>
+            <div class="col-lg-1">     </div>
+        </div>
+    </div>
+</form>
+</section>
+
+<ngx-loading [show]="loading" ></ngx-loading>

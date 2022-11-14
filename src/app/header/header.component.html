@@ -1,0 +1,94 @@
+<!-- header section -->
+
+<section class="header fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand p-0" href="https://catoshi.cat/" target="_blank"><img src="assets/images/processed.jpeg" width="120"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarSupportedContent">
+            <!-- <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>  -->
+            <div class="header-button mt-4 mb-4 mt-md-4 mb-md-4 mt-lg-0 mb-lg-0 d-flex">
+                <!-- <div > 
+                    <button class="btn btn-outline mr-2 mt-lg-0 mt-md-0 mt-sm-0 mt-3" routerLink="/swap"><img
+                        src="assets/images/5.png" width="20" class="mr-2">Swap</button>
+                 </div> -->
+                 
+
+               <div *ngIf="bscChain"> 
+                   <button class="btn btn-outline btn mr-2" type="submit"> BSC TESTNET | {{currentWalletbalance | number:'1.2-2'}} <img src="assets/images/bsclogo.png" width="15px"></button> 
+                </div>
+                <div *ngIf="toEth"> 
+                    <button class="btn btn-outline btn mr-2" type="submit"> ETH VAULT | {{vaultBalance | number:'1.2-2'}} </button> 
+                 </div>
+                 <div *ngIf="toFtm"> 
+                    <button class="btn btn-outline btn mr-2" type="submit"> FTM VAULT | {{vaultBalance | number:'1.2-2'}} </button> 
+                 </div>
+
+
+                 <div *ngIf="ftmChain"> 
+                    <button class="btn btn-outline btn mr-2" type="submit"> FTM TESTNET | {{currentWalletbalance | number:'1.2-2'}} <img src="assets/images/ftm.png" width="15px"></button> 
+                 </div>
+                 <div *ngIf="ftmChain"> 
+                     <button class="btn btn-outline btn mr-2" type="submit"> BSC VAULT | {{vaultBalance | number:'1.2-2'}} </button> 
+                  </div>
+
+               <div *ngIf="ethChain"> 
+                   <button class="btn btn-outline btn mr-2" type="submit">ETHEREUM TESTNET | {{currentWalletbalance | number:'1.2-2'}} <img src="assets/images/ethlogo.png" width="15px"></button> 
+                </div>
+
+                <div *ngIf="ropstenChain"> 
+                    <button class="btn btn-outline btn mr-2" type="submit">ETHEREUM TESTNET | {{currentWalletbalance | number:'1.2-2'}} <img src="assets/images/ethlogo.png" width="15px"></button> 
+                 </div>
+                 <div *ngIf="ropstenChain"> 
+                    <button class="btn btn-outline btn mr-2" type="submit">BSC VAULT | {{vaultBalance | number:'1.2-2'}}</button> 
+                 </div>
+                
+               <div *ngIf="connectWallet">
+                <button class="btn btn-outline mr-2 mt-lg-0 mt-md-0 mt-sm-0 mt-3" type="submit" (click)="connectMetamask()"><img
+                 src="assets/images/5.png" width="20" class="mr-2">Connect Wallet</button>
+                </div>
+                <div *ngIf="walletconnected">
+                    <button class="btn btn-outline mr-2 mt-lg-0 mt-md-0 mt-sm-0 mt-3">{{walletaddress}} 
+                            <svg x="0" y="0" width="20" height="20" style="border-radius: 100px; background-color: #ff7841;"><rect x="0" y="0" width="32" height="32" transform="translate(0.015155733715397232 3.5633515129442204) rotate(246.0 16 16)" fill="#03415E"></rect><rect x="0" y="0" width="28" height="28" transform="translate(-19.663591713754506 3.2352123687940164) rotate(231.9 16 16)" fill="#1876F2"></rect><rect x="0" y="0" width="28" height="28" transform="translate(-27.811359200588324 -0.8874574204753309) rotate(278.4 16 16)" fill="#FB183A"></rect></svg>
+                    </button>
+                </div>
+                <div *ngIf="wrongNetwrk">
+                    <button class="btn btn-outline mr-2 mt-lg-0 mt-md-0 mt-sm-0 mt-3"
+                        style="background: red !important; color: white !important; font-weight: 500 !important;">Wrong Network</button>
+                </div>
+            </div>
+                
+           
+        </div>
+    </nav>
+</section>
+
+
+
+
+<!-- end header section -->
